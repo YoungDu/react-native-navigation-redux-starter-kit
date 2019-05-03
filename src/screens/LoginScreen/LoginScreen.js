@@ -29,27 +29,27 @@ class LoginScreen extends PureComponent {
   loginWithFacebook = () => {
     const { getFacebookUserData, screenType } = this.props;
 
-    LoginManager
-      .logInWithReadPermissions(['public_profile', 'email'])
-      .then((result) => {
-        if (result.isCancelled) {
-          return Promise.reject('Facebook login cancelled.');
-        }
-        return AccessToken.getCurrentAccessToken();
-      })
-      .then((data) => {
-        if (data.accessToken) {
-          getFacebookUserData({ facebookToken: data.accessToken });
+    //LoginManager
+    //  .logInWithReadPermissions(['public_profile', 'email'])
+    //  .then((result) => {
+    //    if (result.isCancelled) {
+    //      return Promise.reject('Facebook login cancelled.');
+    //    }
+    //    return AccessToken.getCurrentAccessToken();
+    //  })
+    //  .then((data) => {
+    //    if (data.accessToken) {
+    //      getFacebookUserData({ facebookToken: data.accessToken });
           if (screenType === 'Single') {
             pushSingleScreenApp();
           } else {
             pushTabBasedApp();
           }
-        } else {
-          Alert.alert('ReactNativeStarterKit', 'Failed to get facebook access token.');
-        }
-      })
-      .catch(() => Alert.alert('ReactNativeStarterKit', 'Something went wrong.'));
+    //    } else {
+    //      Alert.alert('ReactNativeStarterKit', 'Failed to get facebook access token.');
+    //    }
+    //  })
+    //  .catch(() => Alert.alert('ReactNativeStarterKit', 'Something went wrong.'));
   };
 
   render() {
