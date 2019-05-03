@@ -7,10 +7,8 @@ import {
   Image
 } from 'react-native';
 import { Button } from 'react-native-elements';
-import { Navigation } from 'react-native-navigation';
-
-import { LOGIN_SCREEN } from 'src/navigation';
 import { SFProDisplayMedium } from 'src/fonts';
+import { pushTabBasedApp } from 'src/navigation';
 
 const styles = StyleSheet.create({
   flex: {
@@ -42,24 +40,6 @@ const styles = StyleSheet.create({
 
 class WelcomeScreen extends PureComponent {
 
-  handleGetStartAction = (screenType) => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: LOGIN_SCREEN,
-        passProps: {
-          screenType
-        },
-        options: {
-          topBar: {
-            title: {
-              text: 'LOGIN'
-            }
-          }
-        }
-      }
-    });
-  };
-
   render() {
     return (
       <View style={styles.flex}>
@@ -71,7 +51,7 @@ class WelcomeScreen extends PureComponent {
           {'Welcome to RNN v2 Starter Kit!'}
         </SFProDisplayMedium>
         <Button
-          onPress={() => this.handleGetStartAction('Tab')}
+          onPress={() => pushTabBasedApp()}
           title={'Start Tab Based App'}
           buttonStyle={styles.button}
           titleStyle={styles.buttonTitle}
