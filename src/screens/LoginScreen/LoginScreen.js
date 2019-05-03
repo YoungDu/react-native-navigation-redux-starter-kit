@@ -11,7 +11,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
 
 import { connectData } from 'src/redux';
-import { pushSingleScreenApp, pushTabBasedApp } from 'src/navigation';
+import { pushTabBasedApp } from 'src/navigation';
 
 const styles = StyleSheet.create({
   flex: {
@@ -40,11 +40,7 @@ class LoginScreen extends PureComponent {
     //  .then((data) => {
     //    if (data.accessToken) {
     //      getFacebookUserData({ facebookToken: data.accessToken });
-          if (screenType === 'Single') {
-            pushSingleScreenApp();
-          } else {
             pushTabBasedApp();
-          }
     //    } else {
     //      Alert.alert('ReactNativeStarterKit', 'Failed to get facebook access token.');
     //    }

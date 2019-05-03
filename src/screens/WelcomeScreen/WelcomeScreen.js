@@ -71,12 +71,6 @@ class WelcomeScreen extends PureComponent {
           {'Welcome to RNN v2 Starter Kit!'}
         </SFProDisplayMedium>
         <Button
-          onPress={() => this.handleGetStartAction('Single')}
-          title={'Start Single Screen App'}
-          buttonStyle={styles.button}
-          titleStyle={styles.buttonTitle}
-        />
-        <Button
           onPress={() => this.handleGetStartAction('Tab')}
           title={'Start Tab Based App'}
           buttonStyle={styles.button}
